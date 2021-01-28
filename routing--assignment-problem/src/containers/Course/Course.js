@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 class Course extends Component {
+  const createContent = () => {
+    console.log('hello')
+  }
     render () {
         return (
             <div>
