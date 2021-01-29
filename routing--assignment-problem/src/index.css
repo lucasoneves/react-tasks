@@ -4,3 +4,15 @@ body {
   font-family: sans-serif;
   text-align: center;
 }
+
+* {
+  text-decoration: none;
+  color: #444;
+  list-style: none;
+}
+
+.main-nav {
+  display: flex;
+  text-decoration: none;
+  gap: 15px;  
+}

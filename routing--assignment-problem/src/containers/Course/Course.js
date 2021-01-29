@@ -1,17 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from "react";
+import { withRouter } from "react-router";
+import Courses from "../Courses/Courses";
 
 class Course extends Component {
-  const createContent = () => {
-    console.log('hello')
+  state = {
+    id: "",
+    title: "",
+  };
+  componentDidMount() {
+    const paramsId = this.props.match.params.id;
+    const paramsTitle = this.props.match.params.title;
+    this.setState({
+      id: paramsId,
+      title: paramsTitle,
+    });
   }
-    render () {
-        return (
-            <div>
-                <h1>_COURSE_TITLE_</h1>
-                <p>You selected the Course with ID: _ID_</p>
-            </div>
-        );
-    }
+
+  render() {
+    const createContent = () => {
+      console.log("hello");
+    };
+    return (
+      <Fragment>
+        {/* <Courses /> */}
+        <div>
+          <h1>{this.state.title}</h1>
+          <p>You selected the Course with ID: {this.state.id}</p>
+        </div>
+      </Fragment>
+    );
+  }
 }
 
-export default Course;
+export default withRouter(Course);
